@@ -1,6 +1,6 @@
-var emailSubject = "Example Subject"; // Enter your desired subject line (optional)
-var emailBody = "Example Body"; // Enter the default email body (optional)
-var emailCCs = "info@climatemessengers.ca"; // Enter comma-separated emails you want to be CC'd (optional)
+var emailSubject = ""; // Enter your desired subject line (optional)
+var emailBody = ""; // Enter the default email body (optional)
+var emailCCs = ""; // Enter comma-separated emails you want to be CC'd (optional)
 function FindMP() {
     var pc = document.getElementById("pcInput").value;
     if (!IsValidCanadianPostalCode(pc)) {
