@@ -31,21 +31,24 @@ function GetMP(pc: string) {
         var repName;
         var repEmail;
         var repParty;
+        var repDistrict;
         for (let x in reps) {
             if (reps[x]["elected_office"] == "MP") {
                 repName = reps[x]["name"];
                 repEmail = reps[x]["email"];
                 repParty = reps[x]["party_name"];
+                repDistrict = reps[x]["district_name"];
             }
         }
         if (repName != "" && repEmail != "") {
             (document.getElementById("MPInfo") as HTMLInputElement).innerHTML =
+                "<b>Your District: </b>" + repDistrict + "<br>" +
                 "<b>MP Name: </b>" + repName + "<br>" +
-                "<b>MP Email: </b>" + repEmail + "<br>" +
-                "<b>Party: </b>" + repParty;
+                "<b>Party: </b>" + repParty + "<br>" +
+                "<b>MP Email: </b>" + repEmail;
             (document.getElementById("EmailLink") as HTMLInputElement).innerHTML =
-                "<a href='mailto:" + repEmail + 
-                "?subject=" + encodeURIComponent(emailSubject) + 
+                "<a href='mailto:" + repEmail +
+                "?subject=" + encodeURIComponent(emailSubject) +
                 "&body=" + encodeURIComponent(emailBody) +
                 "&cc=" + encodeURIComponent(emailCCs) +
                 "'>Click here to email your MP!</a>";
