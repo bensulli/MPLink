@@ -19,10 +19,10 @@ function FindMP() {
 
 function ResetForm() {
     Message("");
-    document.getElementById("pcForm").hidden = false;
-    (document.getElementById("pcInput") as HTMLInputElement).value = "";
-    (document.getElementById("MPInfo") as HTMLInputElement).innerHTML = "";
-    (document.getElementById("EmailLink") as HTMLInputElement).innerHTML = "";
+    $("#pcForm").show();
+    $("#pcInput").text("");
+    $("#MPInfo").html("");
+    $("EmailLink").html("");
 }
 
 function GetMP(pc: string) {
@@ -42,7 +42,7 @@ function GetMP(pc: string) {
         }
         if (repName != "" && repEmail != "") {
             (document.getElementById("MPInfo") as HTMLInputElement).innerHTML =
-                "<b>Your District: </b>" + repDistrict + "<br>" +
+                "<b>Your District: </b>${repDistrict}" + repDistrict + "<br>" +
                 "<b>MP Name: </b>" + repName + "<br>" +
                 "<b>Party: </b>" + repParty + "<br>" +
                 "<b>MP Email: </b>" + repEmail;
@@ -61,7 +61,7 @@ function GetMP(pc: string) {
 }
 
 function Message(msg: string) {
-    document.getElementById("out").innerHTML = msg;
+    $("out").html(msg);
 }
 
 function IsValidCanadianPostalCode(pc: string): boolean {
